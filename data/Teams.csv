@@ -1,0 +1,31 @@
+team_id,name,required_skills,members
+101,Team_101,"['Networking', 'JavaScript', 'Web Development', 'UI/UX Design']",[42]
+102,Team_102,"['Database Management', 'Data Analysis', 'DevOps']","[8, 11, 43]"
+103,Team_103,"['UI/UX Design', 'Python', 'Web Development']","[12, 19, 24, 39, 41, 46, 50]"
+104,Team_104,"['Web Development', 'Python', 'JavaScript', 'Machine Learning', 'Networking', 'DevOps', 'Data Analysis']",[22]
+105,Team_105,"['DevOps', 'Python', 'Data Analysis', 'Machine Learning', 'Networking', 'Java', 'Database Management']",[]
+106,Team_106,"['Java', 'Data Analysis', 'Networking']","[2, 12, 21, 30, 32, 34, 37, 50]"
+107,Team_107,"['Java', 'UI/UX Design', 'Python', 'DevOps', 'Networking', 'Machine Learning', 'Web Development']",[]
+108,Team_108,"['Networking', 'JavaScript', 'DevOps', 'Java', 'Machine Learning', 'Database Management', 'Web Development']",[]
+109,Team_109,"['Java', 'Database Management', 'Data Analysis', 'Networking']","[32, 34]"
+110,Team_110,"['JavaScript', 'Networking', 'Data Analysis', 'DevOps', 'Java', 'Machine Learning']",[30]
+111,Team_111,"['Python', 'Machine Learning', 'Database Management']","[8, 19, 20, 35, 43, 46, 47, 48]"
+112,Team_112,"['Database Management', 'Web Development', 'Data Analysis', 'Networking']","[19, 47]"
+113,Team_113,"['UI/UX Design', 'Web Development', 'Machine Learning', 'Networking', 'DevOps']",[24]
+114,Team_114,"['Java', 'Data Analysis', 'Database Management']","[11, 32, 34, 43]"
+115,Team_115,"['Web Development', 'Java', 'Database Management']","[9, 20, 46]"
+116,Team_116,"['Data Analysis', 'JavaScript', 'Web Development', 'DevOps', 'Database Management', 'Machine Learning']",[]
+117,Team_117,"['JavaScript', 'Python', 'Web Development', 'UI/UX Design', 'Networking']",[]
+118,Team_118,"['Python', 'DevOps', 'Java', 'Web Development', 'JavaScript', 'Networking', 'Database Management']",[]
+119,Team_119,"['Data Analysis', 'JavaScript', 'UI/UX Design', 'Java', 'Networking', 'Web Development', 'DevOps']",[]
+120,Team_120,"['Web Development', 'JavaScript', 'UI/UX Design', 'DevOps', 'Data Analysis', 'Machine Learning', 'Python']",[]
+121,Team_121,"['UI/UX Design', 'Web Development', 'Data Analysis']","[12, 19, 39, 41, 42, 50]"
+122,Team_122,"['DevOps', 'Networking', 'Database Management', 'Java', 'Data Analysis', 'Web Development']",[]
+123,Team_123,"['Database Management', 'JavaScript', 'Java', 'Python', 'Machine Learning']",[]
+124,Team_124,"['Python', 'Web Development', 'Database Management', 'Java', 'Data Analysis']",[]
+125,Team_125,"['Java', 'Python', 'Networking', 'Machine Learning', 'UI/UX Design', 'JavaScript', 'Web Development']",[]
+126,Team_126,"['Data Analysis', 'DevOps', 'Machine Learning', 'UI/UX Design', 'JavaScript', 'Networking']","[30, 33]"
+127,Team_127,"['Java', 'Python', 'Machine Learning', 'JavaScript', 'Data Analysis']",[]
+128,Team_128,"['Database Management', 'Web Development', 'Python', 'DevOps', 'Machine Learning', 'Data Analysis']",[]
+129,Team_129,"['Python', 'Machine Learning', 'Java', 'JavaScript', 'Data Analysis', 'UI/UX Design', 'Web Development']",[]
+130,Team_130,"['Machine Learning', 'Networking', 'DevOps', 'JavaScript']","[1, 22, 30, 33]"
