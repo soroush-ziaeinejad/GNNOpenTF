@@ -10,7 +10,7 @@ def main():
     experts_df['skillset'] = [str(row) for row in experts_df['skills']]
     teams_df['required_skillset'] = [str(row) for row in teams_df["required_skills"]]
     all_skills = set(skill for skills_list in experts_df['skills'] for skill in skills_list)
-    skills_df = pd.DataFrame(list(enumerate(all_skills, start=1)), columns=["skill_id", "skill_name"])
+    skills_df = pd.DataFrame(list(enumerate(all_skills, start=0)), columns=["skill_id", "skill_name"])
     skill_mapping = {skill_name: skill_id for skill_id, skill_name in zip(skills_df['skill_id'], skills_df['skill_name'])}
     experts_df['skills'] = experts_df['skills'].apply(lambda skills_list: [skill_mapping[skill] for skill in skills_list])
     teams_df['required_skillset'] = teams_df['required_skills'].apply(lambda skills_list: [skill_mapping[skill] for skill in skills_list])
@@ -47,9 +47,9 @@ def main():
 
     data = HeteroData()
 
-    data['expert'].x = torch.tensor(experts_df["user_id"].values, dtype=torch.long)
-    data['skill'].x = torch.tensor(skills_df["skill_id"].values, dtype=torch.long)
-    data['team'].x = torch.tensor(teams_df["team_id"].values, dtype=torch.long)
+    data['expert'].node_id = torch.tensor(experts_df["user_id"].values, dtype=torch.long)
+    data['skill'].node_id = torch.tensor(skills_df["skill_id"].values, dtype=torch.long)
+    data['team'].node_id = torch.tensor(teams_df["team_id"].values, dtype=torch.long)
 
 
     data['team', 'requires', 'skill'].edge_index = edge_index_team_skill
