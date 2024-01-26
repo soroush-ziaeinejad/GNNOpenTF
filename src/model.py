@@ -1,12 +1,11 @@
 from torch_geometric.nn import SAGEConv, to_hetero
-import torch.nn.functional as F
 import torch
 import tqdm
 import torch.nn.functional as F
-
+import torch_geometric.transforms as T
+from torch_geometric.loader import LinkNeighborLoader
+from sklearn.metrics import roc_auc_score
 def main(data):
-
-    import torch_geometric.transforms as T
     transform = T.RandomLinkSplit(
         num_val=0.1,
         num_test=0.1,
@@ -19,13 +18,10 @@ def main(data):
     train_data, val_data, test_data = transform(data)
     model = Model(hidden_channels=64, data=train_data)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    # device = torch.device("cuda:0" if torch.cuda.is_available() else 'cpu')
-    # device = 'cpu'
     print(f"Device: '{device}'")
     model = model.to(device)
     edge_label_index = train_data['team', 'includes', 'expert'].edge_label_index
     edge_label = train_data['team', 'includes', 'expert'].edge_label
-    from torch_geometric.loader import LinkNeighborLoader
     train_loader = LinkNeighborLoader(
         data=train_data,
         num_neighbors=[4, 2],
@@ -49,35 +45,17 @@ def main(data):
             total_loss += float(loss) * pred.numel()
             total_examples += pred.numel()
         print(f"Epoch: {epoch:03d}, Loss: {total_loss / total_examples:.4f}")
-
-
     # Define the validation seed edges:
     edge_label_index = val_data['team', 'includes', 'expert'].edge_label_index
     edge_label = val_data['team', 'includes', 'expert'].edge_label
-
     val_loader = LinkNeighborLoader(
         data=val_data,
-        num_neighbors=[20, 10],
+        num_neighbors=[4, 2],
         edge_label_index=(('team', 'includes', 'expert'), edge_label_index),
         edge_label=edge_label,
-        batch_size=3 * 128,
-        shuffle=False,
+        batch_size=2,
+        shuffle=True,
     )
-
-    sampled_data = next(iter(val_loader))
-    #
-    # print("Sampled mini-batch:")
-    # print("===================")
-    # print(sampled_data)
-    #
-    # print(sampled_data['team', 'includes', 'expert'].edge_label_index.size())
-    # print(sampled_data['team', 'includes', 'expert'].edge_label.min())
-    # print(sampled_data['team', 'includes', 'expert'].edge_label.max())
-
-
-
-
-    from sklearn.metrics import roc_auc_score
     preds = []
     ground_truths = []
     for sampled_data in tqdm.tqdm(val_loader):
@@ -85,7 +63,6 @@ def main(data):
             sampled_data.to(device)
             preds.append(model(sampled_data))
             ground_truths.append(sampled_data['team', 'includes', 'expert'].edge_label)
-
     pred = torch.cat(preds, dim=0).cpu().numpy()
     ground_truth = torch.cat(ground_truths, dim=0).cpu().numpy()
     auc = roc_auc_score(ground_truth, pred)

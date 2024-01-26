@@ -2,6 +2,7 @@ import torch
 import pandas as pd
 from torch_geometric.data import HeteroData
 from ast import literal_eval
+import torch_geometric.transforms as T
 
 def main():
     experts_df = pd.read_csv("../data/Users.csv", converters={"skills":literal_eval})
@@ -60,7 +61,6 @@ def main():
     data['team', 'includes', 'expert'].edge_attr = None
     data['expert', 'has', 'skill'].edge_attr = None
 
-    import torch_geometric.transforms as T
     data = T.ToUndirected()(data)
     torch.save(data, 'data.pt')
     return data
