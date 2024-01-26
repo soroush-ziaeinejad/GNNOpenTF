@@ -1,31 +1,31 @@
 team_id,name,required_skills,members
-101,Team_101,"['Networking', 'JavaScript', 'Web Development', 'UI/UX Design']",[42]
-102,Team_102,"['Database Management', 'Data Analysis', 'DevOps']","[8, 11, 43]"
-103,Team_103,"['UI/UX Design', 'Python', 'Web Development']","[12, 19, 24, 39, 41, 46, 50]"
-104,Team_104,"['Web Development', 'Python', 'JavaScript', 'Machine Learning', 'Networking', 'DevOps', 'Data Analysis']",[22]
-105,Team_105,"['DevOps', 'Python', 'Data Analysis', 'Machine Learning', 'Networking', 'Java', 'Database Management']",[]
-106,Team_106,"['Java', 'Data Analysis', 'Networking']","[2, 12, 21, 30, 32, 34, 37, 50]"
-107,Team_107,"['Java', 'UI/UX Design', 'Python', 'DevOps', 'Networking', 'Machine Learning', 'Web Development']",[]
-108,Team_108,"['Networking', 'JavaScript', 'DevOps', 'Java', 'Machine Learning', 'Database Management', 'Web Development']",[]
-109,Team_109,"['Java', 'Database Management', 'Data Analysis', 'Networking']","[32, 34]"
-110,Team_110,"['JavaScript', 'Networking', 'Data Analysis', 'DevOps', 'Java', 'Machine Learning']",[30]
-111,Team_111,"['Python', 'Machine Learning', 'Database Management']","[8, 19, 20, 35, 43, 46, 47, 48]"
-112,Team_112,"['Database Management', 'Web Development', 'Data Analysis', 'Networking']","[19, 47]"
-113,Team_113,"['UI/UX Design', 'Web Development', 'Machine Learning', 'Networking', 'DevOps']",[24]
-114,Team_114,"['Java', 'Data Analysis', 'Database Management']","[11, 32, 34, 43]"
-115,Team_115,"['Web Development', 'Java', 'Database Management']","[9, 20, 46]"
-116,Team_116,"['Data Analysis', 'JavaScript', 'Web Development', 'DevOps', 'Database Management', 'Machine Learning']",[]
-117,Team_117,"['JavaScript', 'Python', 'Web Development', 'UI/UX Design', 'Networking']",[]
-118,Team_118,"['Python', 'DevOps', 'Java', 'Web Development', 'JavaScript', 'Networking', 'Database Management']",[]
-119,Team_119,"['Data Analysis', 'JavaScript', 'UI/UX Design', 'Java', 'Networking', 'Web Development', 'DevOps']",[]
-120,Team_120,"['Web Development', 'JavaScript', 'UI/UX Design', 'DevOps', 'Data Analysis', 'Machine Learning', 'Python']",[]
-121,Team_121,"['UI/UX Design', 'Web Development', 'Data Analysis']","[12, 19, 39, 41, 42, 50]"
-122,Team_122,"['DevOps', 'Networking', 'Database Management', 'Java', 'Data Analysis', 'Web Development']",[]
-123,Team_123,"['Database Management', 'JavaScript', 'Java', 'Python', 'Machine Learning']",[]
-124,Team_124,"['Python', 'Web Development', 'Database Management', 'Java', 'Data Analysis']",[]
-125,Team_125,"['Java', 'Python', 'Networking', 'Machine Learning', 'UI/UX Design', 'JavaScript', 'Web Development']",[]
-126,Team_126,"['Data Analysis', 'DevOps', 'Machine Learning', 'UI/UX Design', 'JavaScript', 'Networking']","[30, 33]"
-127,Team_127,"['Java', 'Python', 'Machine Learning', 'JavaScript', 'Data Analysis']",[]
-128,Team_128,"['Database Management', 'Web Development', 'Python', 'DevOps', 'Machine Learning', 'Data Analysis']",[]
-129,Team_129,"['Python', 'Machine Learning', 'Java', 'JavaScript', 'Data Analysis', 'UI/UX Design', 'Web Development']",[]
-130,Team_130,"['Machine Learning', 'Networking', 'DevOps', 'JavaScript']","[1, 22, 30, 33]"
+0,Team_101,"['Networking', 'JavaScript', 'Web Development', 'UI/UX Design']","[10, 31, 1, 24, 16, 31, 25, 28, 46, 42, 2, 34, 47, 32, 26, 36, 3, 32, 21, 11, 44]"
+1,Team_102,"['Database Management', 'Data Analysis', 'DevOps']","[41, 34, 2, 18, 16, 11, 32, 12, 7, 39, 36, 34, 30, 42, 7, 3, 0, 18, 20, 18]"
+2,Team_103,"['UI/UX Design', 'Python', 'Web Development']","[17, 9, 33, 18, 14, 10, 24, 16, 4, 49, 10, 49, 32, 43, 29, 23, 31, 4, 40, 38, 16, 35, 45]"
+3,Team_104,"['Web Development', 'Python', 'JavaScript', 'Machine Learning', 'Networking', 'DevOps', 'Data Analysis']","[40, 41, 26, 11, 41, 0, 39, 41, 30, 10, 32, 38, 26, 27, 17, 38, 41, 7, 31, 41, 37, 1, 36]"
+4,Team_105,"['DevOps', 'Python', 'Data Analysis', 'Machine Learning', 'Networking', 'Java', 'Database Management']","[1, 22, 11, 26, 26, 23, 30, 42, 27, 38, 19, 9, 29, 4, 9, 36, 15, 0, 41, 17, 0]"
+5,Team_106,"['Java', 'Data Analysis', 'Networking']","[14, 41, 40, 45, 15, 26, 26, 19, 26, 9, 41, 18, 48, 1, 1, 31, 10, 30, 11, 22, 31, 8, 13]"
+6,Team_107,"['Java', 'UI/UX Design', 'Python', 'DevOps', 'Networking', 'Machine Learning', 'Web Development']","[16, 20, 3, 48, 18, 21, 23, 33, 47, 29, 43, 25, 22, 13, 24, 10, 33, 25, 12, 4, 25, 38]"
+7,Team_108,"['Networking', 'JavaScript', 'DevOps', 'Java', 'Machine Learning', 'Database Management', 'Web Development']","[11, 11, 25, 49, 23, 14, 48, 35, 0, 23, 27, 21, 34, 6, 8, 21, 32, 7, 41, 24, 13, 12]"
+8,Team_109,"['Java', 'Database Management', 'Data Analysis', 'Networking']","[9, 6, 19, 6, 27, 12, 24, 21, 19, 10, 46, 24, 34, 1, 41, 1, 14, 10, 3, 23, 16, 41]"
+9,Team_110,"['JavaScript', 'Networking', 'Data Analysis', 'DevOps', 'Java', 'Machine Learning']","[40, 44, 23, 46, 9, 35, 4, 7, 5, 26, 17, 48, 13, 45, 10, 46, 38, 30, 29, 45, 46, 49]"
+10,Team_111,"['Python', 'Machine Learning', 'Database Management']","[4, 24, 38, 12, 16, 7, 11, 46, 5, 41, 35, 3, 31, 33, 4, 17, 40, 33, 6, 23, 32, 3, 16]"
+11,Team_112,"['Database Management', 'Web Development', 'Data Analysis', 'Networking']","[5, 38, 30, 23, 26, 29, 19, 16, 5, 23, 8, 11, 43, 7, 44, 47, 21, 18, 25, 27, 25, 17]"
+12,Team_113,"['UI/UX Design', 'Web Development', 'Machine Learning', 'Networking', 'DevOps']","[29, 3, 5, 3, 15, 39, 11, 23, 21, 48, 30, 5, 38, 6, 32, 45, 33, 22, 42, 20, 44]"
+13,Team_114,"['Java', 'Data Analysis', 'Database Management']","[22, 45, 10, 18, 24, 46, 44, 28, 27, 46, 46, 6, 46, 29, 47, 30, 42, 0, 0, 44, 44, 25, 39, 47]"
+14,Team_115,"['Web Development', 'Java', 'Database Management']","[39, 49, 17, 38, 48, 25, 14, 41, 37, 29, 39, 8, 3, 22, 7, 22, 6, 34, 15, 42, 20]"
+15,Team_116,"['Data Analysis', 'JavaScript', 'Web Development', 'DevOps', 'Database Management', 'Machine Learning']","[35, 0, 42, 8, 42, 45, 47, 4, 17, 24, 41, 10, 46, 42, 45, 44, 41, 16, 44, 29, 3]"
+16,Team_117,"['JavaScript', 'Python', 'Web Development', 'UI/UX Design', 'Networking']","[38, 37, 42, 33, 45, 5, 18, 28, 46, 38, 48, 19, 17, 11, 5, 43, 5, 13, 23, 11, 15, 11, 40, 13]"
+17,Team_118,"['Python', 'DevOps', 'Java', 'Web Development', 'JavaScript', 'Networking', 'Database Management']","[46, 34, 1, 14, 28, 34, 15, 35, 41, 1, 44, 34, 13, 47, 29, 2, 20, 26, 27, 5, 40, 5, 46, 37]"
+18,Team_119,"['Data Analysis', 'JavaScript', 'UI/UX Design', 'Java', 'Networking', 'Web Development', 'DevOps']","[20, 9, 4, 37, 3, 39, 37, 19, 46, 21, 46, 46, 49, 8, 18, 25, 44, 36, 37, 40]"
+19,Team_120,"['Web Development', 'JavaScript', 'UI/UX Design', 'DevOps', 'Data Analysis', 'Machine Learning', 'Python']","[26, 13, 29, 32, 48, 12, 30, 16, 0, 13, 12, 48, 23, 42, 49, 9, 31, 20, 9, 1, 2]"
+20,Team_121,"['UI/UX Design', 'Web Development', 'Data Analysis']","[42, 2, 24, 35, 22, 11, 30, 12, 13, 36, 45, 26, 20, 38, 19, 43, 42, 46, 38, 26, 46, 41, 48, 7]"
+21,Team_122,"['DevOps', 'Networking', 'Database Management', 'Java', 'Data Analysis', 'Web Development']","[30, 29, 41, 26, 46, 42, 49, 40, 41, 1, 19, 36, 21, 7, 34, 41, 3, 2, 6, 42, 30]"
+22,Team_123,"['Database Management', 'JavaScript', 'Java', 'Python', 'Machine Learning']","[45, 31, 18, 3, 20, 40, 20, 21, 34, 28, 20, 31, 17, 26, 12, 29, 20, 0, 26, 17, 20]"
+23,Team_124,"['Python', 'Web Development', 'Database Management', 'Java', 'Data Analysis']","[49, 46, 26, 47, 24, 25, 5, 10, 48, 10, 45, 18, 38, 0, 49, 5, 30, 13, 28, 23]"
+24,Team_125,"['Java', 'Python', 'Networking', 'Machine Learning', 'UI/UX Design', 'JavaScript', 'Web Development']","[43, 38, 2, 20, 43, 29, 33, 42, 48, 14, 10, 11, 35, 28, 8, 38, 13, 21, 10, 42, 23, 18, 27, 3]"
+25,Team_126,"['Data Analysis', 'DevOps', 'Machine Learning', 'UI/UX Design', 'JavaScript', 'Networking']","[45, 33, 45, 33, 41, 37, 47, 6, 15, 13, 19, 40, 26, 38, 3, 3, 45, 28, 6, 10, 21, 21, 36]"
+26,Team_127,"['Java', 'Python', 'Machine Learning', 'JavaScript', 'Data Analysis']","[36, 2, 4, 3, 19, 20, 45, 36, 39, 10, 26, 42, 48, 3, 19, 2, 2, 40, 47, 35, 15, 20]"
+27,Team_128,"['Database Management', 'Web Development', 'Python', 'DevOps', 'Machine Learning', 'Data Analysis']","[16, 30, 42, 15, 29, 18, 10, 27, 27, 26, 17, 23, 19, 13, 39, 48, 8, 7, 24, 6, 20, 48]"
+28,Team_129,"['Python', 'Machine Learning', 'Java', 'JavaScript', 'Data Analysis', 'UI/UX Design', 'Web Development']","[36, 3, 18, 43, 23, 10, 35, 30, 10, 4, 6, 34, 8, 37, 17, 19, 0, 6, 14, 37, 11, 23]"
+29,Team_130,"['Machine Learning', 'Networking', 'DevOps', 'JavaScript']","[5, 18, 27, 3, 8, 38, 21, 13, 34, 27, 19, 43, 47, 14, 20, 17, 10, 43, 34, 47]"
