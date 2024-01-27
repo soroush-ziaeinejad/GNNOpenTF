@@ -5,8 +5,8 @@ from ast import literal_eval
 import torch_geometric.transforms as T
 
 def main():
-    experts_df = pd.read_csv("../data/Users.csv", converters={"skills":literal_eval})
-    teams_df = pd.read_csv("../data/Teams.csv", converters={"required_skills":literal_eval, "members":literal_eval})
+    experts_df = pd.read_csv("../data/new_data/Users.csv", converters={"skills":literal_eval})
+    teams_df = pd.read_csv("../data/new_data/Teams.csv", converters={"required_skills":literal_eval, "members":literal_eval})
 
     experts_df['skillset'] = [str(row) for row in experts_df['skills']]
     teams_df['required_skillset'] = [str(row) for row in teams_df["required_skills"]]

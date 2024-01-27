@@ -18,6 +18,7 @@ def main(data):
     train_data, val_data, test_data = transform(data)
     model = Model(hidden_channels=64, data=train_data)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = 'cpu'
     print(f"Device: '{device}'")
     model = model.to(device)
     edge_label_index = train_data['team', 'includes', 'expert'].edge_label_index
@@ -31,8 +32,8 @@ def main(data):
         batch_size=2,
         shuffle=True,
     )
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
-    for epoch in range(1, 25):
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
+    for epoch in range(1, 100):
         total_loss = total_examples = 0
         for sampled_data in tqdm.tqdm(train_loader):
             optimizer.zero_grad()
