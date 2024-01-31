@@ -1,13 +1,10 @@
 import torch
 import pandas as pd
 from torch_geometric.data import HeteroData
-from ast import literal_eval
+import tqdm
 import torch_geometric.transforms as T
 
-def main():
-    experts_df = pd.read_csv("../data/new_data/Users.csv", converters={"skills":literal_eval})
-    teams_df = pd.read_csv("../data/new_data/Teams.csv", converters={"required_skills":literal_eval, "members":literal_eval})
-
+def main(experts_df, teams_df, path):
     experts_df['skillset'] = [str(row) for row in experts_df['skills']]
     teams_df['required_skillset'] = [str(row) for row in teams_df["required_skills"]]
     all_skills = set(skill for skills_list in experts_df['skills'] for skill in skills_list)
@@ -18,7 +15,7 @@ def main():
 
     # Create edge index for expert-skill
     edges_expert_skill = []
-    for _, row in experts_df.iterrows():
+    for _, row in tqdm.tqdm(experts_df.iterrows()):
         expert_index = row['user_id']
         for skillID in row['skills']:
             skill_index = skillID
@@ -28,7 +25,7 @@ def main():
 
     # Create edge index for team-skill
     edges_team_skill = []
-    for _, row in teams_df.iterrows():
+    for _, row in tqdm.tqdm(teams_df.iterrows()):
         team_index = row['team_id']
         for skillID in row['required_skillset']:
             skill_index = skillID
@@ -38,7 +35,7 @@ def main():
 
     # Create edge index for team-experts
     edges_team_experts = []
-    for _, row in teams_df.iterrows():
+    for _, row in tqdm.tqdm(teams_df.iterrows()):
         team_index = row['team_id']
         for expertID in row['members']:
             expert_index = expertID
@@ -62,5 +59,5 @@ def main():
     data['expert', 'has', 'skill'].edge_attr = None
 
     data = T.ToUndirected()(data)
-    torch.save(data, 'data.pt')
+    torch.save(data, path)
     return data

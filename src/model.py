@@ -5,21 +5,23 @@ import torch.nn.functional as F
 import torch_geometric.transforms as T
 from torch_geometric.loader import LinkNeighborLoader
 from sklearn.metrics import roc_auc_score
+import traintestsplit as tts
 def main(data):
-    transform = T.RandomLinkSplit(
-        num_val=0.1,
-        num_test=0.1,
-        disjoint_train_ratio=0.3,
-        neg_sampling_ratio=2.0,
-        add_negative_train_samples=False,
-        edge_types=('team', 'includes', 'expert'),
-        rev_edge_types=('expert', 'rev_includes', 'team'),
-    )
-    train_data, val_data, test_data = transform(data)
+    train_data, val_data, test_data = tts.split(data)
+    # transform = T.RandomLinkSplit(
+    #     num_val=0.2,
+    #     num_test=0.0,
+    #     disjoint_train_ratio=0.3,
+    #     neg_sampling_ratio=2.0,
+    #     add_negative_train_samples=False,
+    #     edge_types=('team', 'includes', 'expert'),
+    #     rev_edge_types=('expert', 'rev_includes', 'team'),
+    # )
+    # train_data, val_data, test_data = transform(data)
     model = Model(hidden_channels=64, data=train_data)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    device = 'cpu'
-    print(f"Device: '{device}'")
+    # device = 'cpu'
+    # print(f"Device: '{device}'")
     model = model.to(device)
     edge_label_index = train_data['team', 'includes', 'expert'].edge_label_index
     edge_label = train_data['team', 'includes', 'expert'].edge_label
@@ -29,11 +31,11 @@ def main(data):
         neg_sampling_ratio=2.0,
         edge_label_index=(('team', 'includes', 'expert'), edge_label_index),
         edge_label=edge_label,
-        batch_size=2,
+        batch_size=64,
         shuffle=True,
     )
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
-    for epoch in range(1, 100):
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    for epoch in range(1, 10):
         total_loss = total_examples = 0
         for sampled_data in tqdm.tqdm(train_loader):
             optimizer.zero_grad()
@@ -54,7 +56,7 @@ def main(data):
         num_neighbors=[4, 2],
         edge_label_index=(('team', 'includes', 'expert'), edge_label_index),
         edge_label=edge_label,
-        batch_size=2,
+        batch_size=64,
         shuffle=True,
     )
     preds = []
@@ -67,8 +69,8 @@ def main(data):
     pred = torch.cat(preds, dim=0).cpu().numpy()
     ground_truth = torch.cat(ground_truths, dim=0).cpu().numpy()
     auc = roc_auc_score(ground_truth, pred)
-    print()
     print(f"Validation AUC: {auc:.4f}")
+    return model
 
 class GNN(torch.nn.Module):
     def __init__(self, hidden_channels):
