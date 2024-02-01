@@ -18,10 +18,9 @@ def main(data, dataset_name):
     #     train_data, val_data, test_data = tts.split(data, dataset_name,valid_ratio=0.3,test_ratio=0.0)
     transform = T.RandomLinkSplit(
         num_val=0.2,
-        num_test=0.1,
-        is_undirected=True,
-        disjoint_train_ratio=0.0,
-        neg_sampling_ratio=1.0,
+        num_test=0.0,
+        disjoint_train_ratio=0.3,
+        neg_sampling_ratio=2.0,
         add_negative_train_samples=False,
         edge_types=('team', 'includes', 'expert'),
         rev_edge_types=('expert', 'rev_includes', 'team'),
@@ -38,7 +37,7 @@ def main(data, dataset_name):
         data=train_data,
         # num_neighbors=[4, 2],
         num_neighbors={key: [-1] for key in train_data.edge_types},
-        neg_sampling_ratio=0.0,
+        neg_sampling_ratio=2.0,
         edge_label_index=(('team', 'includes', 'expert'), edge_label_index),
         edge_label=edge_label,
         batch_size=64,
@@ -51,11 +50,10 @@ def main(data, dataset_name):
     val_loader = LinkNeighborLoader(
         data=val_data,
         num_neighbors={key: [-1] for key in train_data.edge_types},
-        neg_sampling_ratio=1.0,
         edge_label_index=(('team', 'includes', 'expert'), edge_label_index),
         edge_label=edge_label,
-        batch_size=64,
-        shuffle=True,
+        batch_size=3*64,
+        shuffle=False,
     )
 
 
